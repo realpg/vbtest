@@ -21,8 +21,8 @@ class Data extends CI_Controller {
             $tarr=str_split($row->t160);
             $f="";$t="";
             for ($i=0;$i<20;$i++) {
-                $f .= sprintf("%X",ord($farr[$i]));
-                $t .= sprintf("%X",ord($tarr[$i]));
+                $f .= sprintf("%2X",ord($farr[$i]));
+                $t .= sprintf("%2sX",ord($tarr[$i]));
             }
             echo "[{$f}] -> [{$t}] {$row->amount}<br>";
         }
