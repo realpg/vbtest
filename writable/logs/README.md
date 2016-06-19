@@ -1,0 +1,2 @@
+Application Log Folder
+Writable
