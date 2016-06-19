@@ -114,7 +114,7 @@ switch (ENVIRONMENT)
  *
  * NO TRAILING SLASH!
  */
-	$application_folder = '../v2buy-application';
+	$application_folder = '../app';
 
 /*
  *---------------------------------------------------------------
