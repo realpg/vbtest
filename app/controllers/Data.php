@@ -24,7 +24,7 @@ class Data extends CI_Controller {
                 $f .= sprintf("%02X",ord($farr[$i]));
                 $t .= sprintf("%02X",ord($tarr[$i]));
             }
-            echo "{$id}: [{$f}] -> [{$t}] {$row->amount}<br>";
+            echo "{$row->id}: [{$f}] -> [{$t}] {$row->amount}<br>";
         }
     }
 }
