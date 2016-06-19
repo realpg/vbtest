@@ -14,6 +14,7 @@ class Data extends CI_Controller {
     }
     public function show() {
         $this->db->limit(100);
+        $this->db->order_by('id','asc');
         $query=$this->db->get('qpc_trans');
         foreach ($query->result() as $row) {
             echo "[{$row->f160}]<br>";
