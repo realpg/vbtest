@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => 'localhost:/var/run/mysqld/mysqld.sock',
 	'username' => 'v2buy',
 	'password' => 'hFhukAfXvVArd9IE',
 	'database' => 'v2buy',
