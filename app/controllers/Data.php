@@ -17,7 +17,14 @@ class Data extends CI_Controller {
         $this->db->order_by('id','asc');
         $query=$this->db->get('qpc_trans');
         foreach ($query->result() as $row) {
-            echo "[{$row->f160}]<br>";
+            $farr=str_split($row->f160);
+            $tarr=str_split($row->t160);
+            $f="";$t="";
+            for ($i=0;$i<20;$i++) {
+                $f .= sprintf("%X",ord($farr[$i]));
+                $t .= sprintf("%X",ord($tarr[$i]));
+            }
+            echo "[{$f}] -> [{$t}] {$row->amount}<br>";
         }
     }
 }
