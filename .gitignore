@@ -3,4 +3,4 @@ writable/logs/*
 
 .buildpath
 .project
-.setting/*
+.settings/*
