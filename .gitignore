@@ -1,2 +1,6 @@
 writable/cache/*
 writable/logs/*
+
+.buildpath
+.project
+.setting/*
