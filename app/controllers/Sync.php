@@ -8,11 +8,15 @@ class Sync extends CI_Controller {
         $last_tid = intval($this->input->post('last_tid'));
         if ($last_tid<1) die(json_encode(array('status'=>-1)));
         $this->load->model('Blockchain');
+        
+        $result['status']=0;
+        $result['topid']=$this->Blockchain->getMax();
         $bc=$this->Blockchain->fetch100($last_tid);
         if (empty($bc)) {
-            die(json_encode(array('status'=>0,'count'=>0)));
+            $result['count']=0;
+            die(json_encode($result));
         }
-        $result['status']=0;
+        
         $result['count']=count($bc);
         $result['content']='';
         foreach ($bc as $row) {
