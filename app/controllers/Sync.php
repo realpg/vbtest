@@ -5,7 +5,7 @@ class Sync extends CI_Controller {
         parent::__construct();
     }
     public function get_some() {
-        $last_tid = intval($this->input->post('last_tid'));
+        $last_tid = intval($this->uri->segment(3));
         if ($last_tid<1) die(json_encode(array('status'=>-1)));
         $this->load->model('Blockchain');
         
