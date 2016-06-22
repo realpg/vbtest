@@ -43,6 +43,7 @@ class Sync extends CI_Controller {
         $r=$this->Blockchain->getPending($tids);
         if (empty($r)) die(json_encode(array('status'=>0,'msg'=>'no change')));
         $result['status']=1;
+        $result['content']='';
         foreach ($r as $row) {
             if (!empty($result['content'])) {
                 $result['content'] .="||";
