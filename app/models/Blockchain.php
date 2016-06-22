@@ -20,4 +20,14 @@ class Blockchain extends CI_Model {
         $row=$query->row();
         return $row->maxid;
     }
+    public function getPending($idArray) {
+        $this->db->select('id,acc_time');
+        $this->db->where_in('id',$idArray);
+        $this->db->where('acc_time >',0);
+        $query=$this->db->get('qpc_trans');
+        if ($query->num_rows()>0) {
+            return $query->result();
+        }
+        return false;
+    }
 }

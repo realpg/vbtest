@@ -34,4 +34,21 @@ class Sync extends CI_Controller {
         }
         die(json_encode($result));
     }
+    public function pending() {
+        $tids = $_POST['tid'];
+        if (!is_array($tids)) die(json_encode(array('status'=>-1,'msg'=>'array required')));
+        foreach ($tids as $k=>$v) if (!is_numeric($v)) die(json_encode(array('status'=>-1,'msg'=>'need numbers')));
+        
+        $this->load->model('Blockchain');
+        $r=$this->Blockchain->getPending($tids);
+        if (empty($r)) die(json_encode(array('status'=>0,'msg'=>'no change')));
+        $result['status']=1;
+        foreach ($r as $row) {
+            if (!empty($result['content'])) {
+                $result['content'] .="||";
+            }
+            $result['content'] .= "{$row->id}|{$row->acc_time}";
+        }
+        die(json_encode($result));
+    }
 }
