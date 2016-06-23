@@ -4,7 +4,7 @@ class Data extends CI_Controller {
         for ($i=1;$i<1000;$i++) {
             $r1=sha1(microtime() . rand(1,99999999));
             $r2=sha1(microtime() . rand(1,99999999));
-            $a=rand(1,9999);
+            $a=rand(1,999);
             $t1=time();
             $t2=time()+rand(1,3600);
             $sql = "INSERT INTO qpc_trans (f160,t160,amount,req_time,acc_time) VALUES (0x{$r1}, 0x{$r2}, {$a}, {$t1}, {$t2})";
