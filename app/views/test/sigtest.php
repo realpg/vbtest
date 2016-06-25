@@ -12,5 +12,7 @@ MSG: <input name="msg" maxlength="64"><br>
 SIG: <input name="sig"><br>
 <input type="submit" value="提交">
 </form>
+<br>
+<?=date("Y-m-d H:i:s")?>
 </body>
 </html>
