@@ -50,13 +50,10 @@ class Data extends CI_Controller {
         
         $publicKey = '';;
         secp256k1_ec_pubkey_parse($context, $publicKey, $pubRaw);
-
         $signature = '';
         secp256k1_ecdsa_signature_parse_der($context,$signature, $sigRaw);
-        
         // Verify:
         $result = secp256k1_ecdsa_verify($context, $signature, $msgRaw, $publicKey);
-        
-        die($result);
+        var_dump($result);
     }
 }
