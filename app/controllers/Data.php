@@ -27,4 +27,32 @@ class Data extends CI_Controller {
             echo "{$row->id}: [{$f}] -> [{$t}] {$row->amount}<br>";
         }
     }
+    public function sigtest() {
+        $pubkey=$this->input->post('publickey');
+        $msg=$this->input->post('msg');
+        $sig=$this->input->post('sig');
+        if (empty($pubkey)) {
+            $this->load->view('test/sigtest');
+            return;
+        }
+        if (strlen($pubkey)!=66) {
+            die('WRONG PUBLIC KEY!');
+        }
+        if (strlen($msg)!=64) {
+            die('WRONG MSG');
+        }
+        $context = secp256k1_context_create(SECP256K1_CONTEXT_VERIFY);
+        
+        $msgRaw = pack("H*", $msg);
+        $sigRaw = pack("H*", $sig);
+        $pubRaw = pack("H*", $pubkey);
+        
+        $signature = '';
+        secp256k1_ecdsa_signature_parse_der($context,$signature, $sigRaw);
+        
+        // Verify:
+        $result = secp256k1_ecdsa_verify($context, $signature, $msgRaw, $pubRaw);
+        
+        die($result);
+    }
 }
