@@ -10,7 +10,7 @@
 PUBLIC KEY: <input name="publickey" maxlength="66"><br>
 MSG: <input name="msg" maxlength="64"><br>
 SIG: <input name="sig"><br>
-<input type="submit" value="�ύ">
+<input type="submit" value="提交">
 </form>
 </body>
 </html>
