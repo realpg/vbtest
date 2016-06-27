@@ -30,10 +30,8 @@ SIG: <input name="sig"><br>
 </form>
 <br>
 
-<form action="/data/" method="post">
-<input name="pubkey" placeholder="pubkey"><br>
-<input name="msg" placeholder="msg"><br>
-<input name="sig" placeholder="sig"><br>
+<form action="/data/chkbalance" method="post">
+<input name="f160" placeholder="f160检查余额"><br>
 <input type="submit"><br>
 </form>
 <br>

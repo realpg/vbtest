@@ -60,4 +60,10 @@ class Data extends CI_Controller {
         $result = secp256k1_ecdsa_verify($context, $signature, $msgRaw, $publicKey);
         var_dump($result);
     }
+    public function chkbalance() {
+        $f160=trim($this->input->post('f160'));
+        $this->load->model('Blockchain');
+        echo "BALANCE: " . $this->Blockchain->Blockchain($f160);
+        
+    }
 }
