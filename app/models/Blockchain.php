@@ -39,7 +39,7 @@ class Blockchain extends CI_Model {
         $query=$this->db->query("SELECT * FROM qpc_token WHERE token={$token} AND f160=0x{$f160} AND v=0 FOR UPDATE");
         if ($query->num_rows()==0) {
             $this->db->trans_rollback();
-            throw new Exception("Token[{$token}]失效，请重新尝试转账",1021);
+            throw new Exception("Token[{$token}]失效，请重新尝试转账[{$f160}]",1021);
             return;
         }
         $balance=$this->chkBalance($f160);
