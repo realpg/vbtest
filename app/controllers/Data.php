@@ -63,7 +63,7 @@ class Data extends CI_Controller {
     public function chkbalance() {
         $f160=trim($this->input->post('f160'));
         $this->load->model('Blockchain');
-        echo "BALANCE: " . $this->Blockchain->Blockchain($f160);
+        echo "BALANCE: " . $this->Blockchain->chkBalance($f160);
         
     }
 }
