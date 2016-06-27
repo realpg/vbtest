@@ -43,7 +43,7 @@ class Blockchain extends CI_Model {
             return;
         }
         $balance=$this->chkBalance($f160);
-        if ($balance<$f160) {
+        if ($balance<$v) {
             $this->db->trans_rollback();
             throw new Exception("网络不接受您的交易:余额不足，\r\n请等待网络同步完毕确认您的真实可用余额",1031);
             return;
