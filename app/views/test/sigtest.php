@@ -14,7 +14,7 @@ SIG: <input name="sig"><br>
 </form>
 <br>
 <br>
-<form action="" method="post">
+<form action="/trade/token" method="post">
 <input name="f160" placeholder="f160"><br>
 <input name="t160" placeholder="t160"><br>
 <input name="v" value="1"><br>
