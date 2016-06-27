@@ -9,7 +9,8 @@ class Tradeutil extends CI_Model {
         return $this->db->insert_id();
     }
     public function chkLastTrans($f160,$t160,$v) {
-        $sql="DELETE FROM qpc_token WHERE tm<" . time()-1800;
+        $tm=time()-1800;
+        $sql = "DELETE FROM qpc_token WHERE tm<{$tm}";
         $this->db->query($sql);
         
         $sql="SELECT token FROM qpc_token WHERE f160=0x{$f160} AND t160=0x{$t160} AND v={$v}";
