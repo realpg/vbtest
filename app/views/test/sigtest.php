@@ -30,6 +30,14 @@ SIG: <input name="sig"><br>
 </form>
 <br>
 
+<form action="/data/" method="post">
+<input name="pubkey" placeholder="pubkey"><br>
+<input name="msg" placeholder="msg"><br>
+<input name="sig" placeholder="sig"><br>
+<input type="submit"><br>
+</form>
+<br>
+
 <?=date("Y-m-d H:i:s")?>
 </body>
 </html>
