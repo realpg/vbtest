@@ -25,7 +25,7 @@ class Tradeutil extends CI_Model {
             return false;
         }
         $pubkeyRaw=pack("H*",$hex);
-        $sha256 = hash('sha256',$pubkeyRaw,true);
+        $sha256 = hash('sha256',$pubkeyRaw);
         $array['sha256']=$sha256;
         $sha256Raw = hash('sha256',$pubkeyRaw,true);
         $array['string'] = hash('ripemd160',$sha256Raw);
