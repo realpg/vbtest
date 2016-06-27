@@ -13,6 +13,15 @@ SIG: <input name="sig"><br>
 <input type="submit" value="提交">
 </form>
 <br>
+<br>
+<form action="" method="post">
+<input name="f160" placeholder="f160"><br>
+<input name="t160" placeholder="t160"><br>
+<input name="v" value="1"><br>
+<input type="submit"><br>
+</form>
+<br>
+
 <?=date("Y-m-d H:i:s")?>
 </body>
 </html>
