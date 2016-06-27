@@ -36,6 +36,7 @@ class Trade extends CI_Controller {
         if (!$f160) {
             die(json_encode(array('status'=>-1,'msg'=>'公钥封装不正确')));
         }
+        $f160=$f160['string'];
         $this->load->model('Blockchain');
         try {
             $this->Blockchain->transfer($f160,$t160,$amount,$token);            
