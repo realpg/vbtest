@@ -47,7 +47,7 @@ class Trade extends CI_Controller {
     public function token() {
         $f160=$this->input->post('f160');
         $t160=$this->input->post('t160');
-        $v=intval($v);
+        $v=intval($this->input->post('v'));
         if ($v<1) {
             die(json_encode(array('status'=>-1,'token'=>'','msg'=>'转账金额不正确')));
         }
