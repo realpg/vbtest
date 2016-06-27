@@ -4,7 +4,7 @@ class Tradeutil extends CI_Model {
         parent::__construct();
     }
     public function genToken($r160) {
-        $sql="REPLACE INTO qpc_token (r160,tm,v) VALUES (0x" . $r160 . "," . time() . ",0)";
+        $sql="REPLACE INTO qpc_token (f160,tm,v) VALUES (0x" . $r160 . "," . time() . ",0)";
         $query=$this->db->query($sql);
         return $this->db->insert_id();
     }
