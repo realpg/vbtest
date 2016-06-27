@@ -43,7 +43,7 @@ class Data extends CI_Controller {
         }
         $this->load->model('Tradeutil');
         $r160 = $this->Tradeutil->getR160FromPubkeyHexString($pubkey);
-        echo "{$pubkey}:\n\t{$r160}\r\n";
+        echo "{$pubkey}:\n\t{$r160['string']}\r\n";
         
         $context = secp256k1_context_create(SECP256K1_CONTEXT_VERIFY);
         
