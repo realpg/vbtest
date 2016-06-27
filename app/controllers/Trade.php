@@ -33,7 +33,7 @@ class Trade extends CI_Controller {
         }
         $this->load->model('Tradeutil');
         $f160 = $this->Tradeutil->getR160FromPubkeyHexString($pubkey);
-        if (!f160) {
+        if (!$f160) {
             die(json_encode(array('status'=>-1,'msg'=>'公钥封装不正确')));
         }
         $this->load->model('Blockchain');
